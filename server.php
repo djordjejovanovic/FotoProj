@@ -88,9 +88,9 @@ if (isset($_POST['login_confirm'])) {
                 setcookie('password', htmlspecialchars($_POST['password']), time() + 60 * 60 * 24 * 365);
                 setcookie('rememberMe', htmlspecialchars($_POST['rememberMe']), time() + 60 * 60 * 24 * 365);
             } else {
-                setcookie('username', '');
-                setcookie('password', '');
-                setcookie('rememberMe', '');
+                setcookie('username', '', time()-3600);
+                setcookie('password', '', time()-3600);
+                setcookie('rememberMe', '', time()-3600);
             }
 
             header('location: index.php');
